@@ -6,6 +6,23 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		804F1FA52E2EECFD00F6B350 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804F1F9A2E2EECFD00F6B350 /* AppDelegate.swift */; };
+		804F1FA62E2EECFD00F6B350 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804F1FA12E2EECFD00F6B350 /* SceneDelegate.swift */; };
+		804F1FA72E2EECFD00F6B350 /* TransactionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804F1FA22E2EECFD00F6B350 /* TransactionsView.swift */; };
+		804F1FA82E2EECFD00F6B350 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804F1FA32E2EECFD00F6B350 /* ViewController.swift */; };
+		804F1FA92E2EECFD00F6B350 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 804F1F9B2E2EECFD00F6B350 /* Assets.xcassets */; };
+		804F1FAB2E2EECFD00F6B350 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 804F1F9E2E2EECFD00F6B350 /* LaunchScreen.storyboard */; };
+		804F1FAC2E2EECFD00F6B350 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 804F1FA02E2EECFD00F6B350 /* Main.storyboard */; };
+		804F1FAE2E2EED1B00F6B350 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804F1FAD2E2EED1000F6B350 /* Transaction.swift */; };
+		804F1FB82E2EED8D00F6B350 /* TransactionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804F1FB72E2EED8000F6B350 /* TransactionResponse.swift */; };
+		804F1FBA2E2EED9600F6B350 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804F1FB92E2EED9300F6B350 /* Record.swift */; };
+		804F1FBC2E2EEE0E00F6B350 /* TransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804F1FBB2E2EEE0600F6B350 /* TransactionCell.swift */; };
+		804F1FBE2E2EF3D600F6B350 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804F1FBD2E2EF3D100F6B350 /* DashboardView.swift */; };
+		804F1FC02E2EF3E900F6B350 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804F1FBF2E2EF3E500F6B350 /* DashboardViewModel.swift */; };
+		804F1FC32E2EF8C800F6B350 /* TransactionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804F1FC22E2EF8C300F6B350 /* TransactionsViewModel.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		804F1F472E2EE55A00F6B350 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,27 +44,24 @@
 		804F1F302E2EE55900F6B350 /* Reto_BBVA_PedroF.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reto_BBVA_PedroF.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		804F1F462E2EE55A00F6B350 /* Reto_BBVA_PedroFTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Reto_BBVA_PedroFTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		804F1F502E2EE55A00F6B350 /* Reto_BBVA_PedroFUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Reto_BBVA_PedroFUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		804F1F9A2E2EECFD00F6B350 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		804F1F9B2E2EECFD00F6B350 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		804F1F9C2E2EECFD00F6B350 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		804F1F9D2E2EECFD00F6B350 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		804F1F9F2E2EECFD00F6B350 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		804F1FA12E2EECFD00F6B350 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		804F1FA22E2EECFD00F6B350 /* TransactionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsView.swift; sourceTree = "<group>"; };
+		804F1FA32E2EECFD00F6B350 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		804F1FAD2E2EED1000F6B350 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		804F1FB72E2EED8000F6B350 /* TransactionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionResponse.swift; sourceTree = "<group>"; };
+		804F1FB92E2EED9300F6B350 /* Record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
+		804F1FBB2E2EEE0600F6B350 /* TransactionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCell.swift; sourceTree = "<group>"; };
+		804F1FBD2E2EF3D100F6B350 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		804F1FBF2E2EF3E500F6B350 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
+		804F1FC22E2EF8C300F6B350 /* TransactionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		804F1F582E2EE55A00F6B350 /* Exceptions for "Reto_BBVA_PedroF" folder in "Reto_BBVA_PedroF" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = 804F1F2F2E2EE55900F6B350 /* Reto_BBVA_PedroF */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		804F1F322E2EE55900F6B350 /* Reto_BBVA_PedroF */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				804F1F582E2EE55A00F6B350 /* Exceptions for "Reto_BBVA_PedroF" folder in "Reto_BBVA_PedroF" target */,
-			);
-			path = Reto_BBVA_PedroF;
-			sourceTree = "<group>";
-		};
 		804F1F492E2EE55A00F6B350 /* Reto_BBVA_PedroFTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = Reto_BBVA_PedroFTests;
@@ -88,7 +102,7 @@
 		804F1F272E2EE55900F6B350 = {
 			isa = PBXGroup;
 			children = (
-				804F1F322E2EE55900F6B350 /* Reto_BBVA_PedroF */,
+				804F1FA42E2EECFD00F6B350 /* Reto_BBVA_PedroF */,
 				804F1F492E2EE55A00F6B350 /* Reto_BBVA_PedroFTests */,
 				804F1F532E2EE55A00F6B350 /* Reto_BBVA_PedroFUITests */,
 				804F1F312E2EE55900F6B350 /* Products */,
@@ -105,6 +119,76 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		804F1F982E2EECFD00F6B350 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				804F1FB52E2EED3A00F6B350 /* Entities */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		804F1F992E2EECFD00F6B350 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				804F1FC42E2EF8D200F6B350 /* Dashboard */,
+				804F1FC12E2EF8B800F6B350 /* Transactions */,
+				804F1FBB2E2EEE0600F6B350 /* TransactionCell.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		804F1FA42E2EECFD00F6B350 /* Reto_BBVA_PedroF */ = {
+			isa = PBXGroup;
+			children = (
+				804F1F992E2EECFD00F6B350 /* Presentation */,
+				804F1F982E2EECFD00F6B350 /* Domain */,
+				804F1F9A2E2EECFD00F6B350 /* AppDelegate.swift */,
+				804F1F9B2E2EECFD00F6B350 /* Assets.xcassets */,
+				804F1F9C2E2EECFD00F6B350 /* Info.plist */,
+				804F1F9E2E2EECFD00F6B350 /* LaunchScreen.storyboard */,
+				804F1FA02E2EECFD00F6B350 /* Main.storyboard */,
+				804F1FA12E2EECFD00F6B350 /* SceneDelegate.swift */,
+				804F1FA32E2EECFD00F6B350 /* ViewController.swift */,
+			);
+			path = Reto_BBVA_PedroF;
+			sourceTree = "<group>";
+		};
+		804F1FB52E2EED3A00F6B350 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				804F1FB62E2EED4400F6B350 /* Models */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		804F1FB62E2EED4400F6B350 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				804F1FAD2E2EED1000F6B350 /* Transaction.swift */,
+				804F1FB92E2EED9300F6B350 /* Record.swift */,
+				804F1FB72E2EED8000F6B350 /* TransactionResponse.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		804F1FC12E2EF8B800F6B350 /* Transactions */ = {
+			isa = PBXGroup;
+			children = (
+				804F1FA22E2EECFD00F6B350 /* TransactionsView.swift */,
+				804F1FC22E2EF8C300F6B350 /* TransactionsViewModel.swift */,
+			);
+			path = Transactions;
+			sourceTree = "<group>";
+		};
+		804F1FC42E2EF8D200F6B350 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				804F1FBD2E2EF3D100F6B350 /* DashboardView.swift */,
+				804F1FBF2E2EF3E500F6B350 /* DashboardViewModel.swift */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -119,9 +203,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				804F1F322E2EE55900F6B350 /* Reto_BBVA_PedroF */,
 			);
 			name = Reto_BBVA_PedroF;
 			packageProductDependencies = (
@@ -225,6 +306,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				804F1FA92E2EECFD00F6B350 /* Assets.xcassets in Resources */,
+				804F1FAB2E2EECFD00F6B350 /* LaunchScreen.storyboard in Resources */,
+				804F1FAC2E2EECFD00F6B350 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,6 +333,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				804F1FA52E2EECFD00F6B350 /* AppDelegate.swift in Sources */,
+				804F1FC02E2EF3E900F6B350 /* DashboardViewModel.swift in Sources */,
+				804F1FA62E2EECFD00F6B350 /* SceneDelegate.swift in Sources */,
+				804F1FA72E2EECFD00F6B350 /* TransactionsView.swift in Sources */,
+				804F1FB82E2EED8D00F6B350 /* TransactionResponse.swift in Sources */,
+				804F1FBE2E2EF3D600F6B350 /* DashboardView.swift in Sources */,
+				804F1FC32E2EF8C800F6B350 /* TransactionsViewModel.swift in Sources */,
+				804F1FBA2E2EED9600F6B350 /* Record.swift in Sources */,
+				804F1FA82E2EECFD00F6B350 /* ViewController.swift in Sources */,
+				804F1FBC2E2EEE0E00F6B350 /* TransactionCell.swift in Sources */,
+				804F1FAE2E2EED1B00F6B350 /* Transaction.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +375,25 @@
 			targetProxy = 804F1F512E2EE55A00F6B350 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		804F1F9E2E2EECFD00F6B350 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				804F1F9D2E2EECFD00F6B350 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		804F1FA02E2EECFD00F6B350 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				804F1F9F2E2EECFD00F6B350 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		804F1F5A2E2EE55A00F6B350 /* Debug */ = {
