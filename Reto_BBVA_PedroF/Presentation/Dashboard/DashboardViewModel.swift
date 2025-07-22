@@ -44,8 +44,14 @@ class DashboardViewController: UIViewController {
 
     private func updateUI() {
         dashboardView.balanceLabel.text = "$\(String(format: "%.2f", viewModel.balance))"
+        
+        dashboardView.totalBalanceLabel.text = "Saldo: $\(String(format: "%.2f", viewModel.balance))"
+        dashboardView.totalIngresosLabel.text = "Ingresos: $\(String(format: "%.2f", viewModel.ingresos))"
+        dashboardView.totalEgresosLabel.text = "Egresos: $\(String(format: "%.2f", viewModel.egresos))"
+        
         dashboardView.tableView.reloadData()
     }
+
 }
 
 
@@ -78,12 +84,13 @@ extension DashboardViewController: UITableViewDelegate {
     // Implementa si necesitas altura personalizada o interacción
 }
 
-
 import Foundation
 
 @MainActor
 final class DashboardViewModel: ObservableObject {
     @Published var balance: Double = 0.0
+    @Published var ingresos: Double = 0.0
+    @Published var egresos: Double = 0.0
     @Published var sections: [TransactionSection] = []
     @Published var isLoading = false
     @Published var errorMessage: String?
@@ -101,7 +108,20 @@ final class DashboardViewModel: ObservableObject {
         do {
             let record = try await getTransactionsUseCase.execute()
             balance = record.balance
-            sections = record.transactions.groupedByDate()
+
+            let allTransactions = record.transactions
+            ingresos = allTransactions
+                .filter { $0.type == "ingreso" }
+                .map { $0.amount }
+                .reduce(0, +)
+
+            egresos = allTransactions
+                .filter { $0.type == "egreso" }
+                .map { abs($0.amount) }
+                .reduce(0, +)
+
+
+            sections = allTransactions.groupedByDate()
         } catch {
             errorMessage = error.localizedDescription
         }
@@ -109,3 +129,4 @@ final class DashboardViewModel: ObservableObject {
         isLoading = false
     }
 }
+

@@ -24,24 +24,26 @@ struct TransactionSection {
 
 extension Array where Element == Transaction {
     func groupedByDate() -> [TransactionSection] {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd"
+        let inputFormatter = DateFormatter()
+        inputFormatter.dateFormat = "yyyy-MM-dd"
         
         let displayFormatter = DateFormatter()
         displayFormatter.locale = Locale(identifier: "es_ES")
         displayFormatter.dateFormat = "d 'de' MMMM"
         
-        let grouped = Dictionary(grouping: self) { transaction -> String in
-            guard let date = formatter.date(from: transaction.date) else { return "Sin fecha" }
-            return displayFormatter.string(from: date)
+        // 1. Agrupar usando Date
+        let grouped = Dictionary(grouping: self) { transaction -> Date in
+            inputFormatter.date(from: transaction.date) ?? Date.distantPast
         }
         
-        let sorted = grouped.sorted { lhs, rhs in
-            guard let lhsDate = formatter.date(from: lhs.key),
-                  let rhsDate = formatter.date(from: rhs.key) else { return false }
-            return lhsDate > rhsDate
+        // 2. Ordenar por Date descendente (más reciente primero)
+        let sorted = grouped.sorted { $0.key > $1.key }
+
+        // 3. Mapear a [TransactionSection] con String de fecha para mostrar
+        return sorted.map { (date, transactions) in
+            let dateString = displayFormatter.string(from: date)
+            return TransactionSection(date: dateString, transactions: transactions)
         }
-        
-        return sorted.map { TransactionSection(date: $0.key, transactions: $0.value) }
     }
 }
+
