@@ -11,6 +11,7 @@ class DashboardViewController: UIViewController {
 
     private let dashboardView = DashboardView()
     private let viewModel: DashboardViewModel
+    
 
     init(viewModel: DashboardViewModel) {
         self.viewModel = viewModel
@@ -27,14 +28,31 @@ class DashboardViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .black
         title = "Dashboard"
         configureTable()
+        setupToggleSwitch()
 
         Task {
             await viewModel.fetchData()
             updateUI()
         }
+    }
+
+    private func setupToggleSwitch() {
+        let toggle = UISwitch()
+        toggle.isOn = viewModel.shouldHideAmounts
+        toggle.addTarget(self, action: #selector(toggleSwitchChanged(_:)), for: .valueChanged)
+
+        let toggleItem = UIBarButtonItem(customView: toggle)
+        let labelItem = UIBarButtonItem(title: "Ocultar Montos", style: .plain, target: nil, action: nil)
+        labelItem.setTitleTextAttributes([.font: UIFont.systemFont(ofSize: 14)], for: .normal)
+        
+        navigationItem.rightBarButtonItems = [toggleItem, labelItem]
+    }
+
+    @objc private func toggleSwitchChanged(_ sender: UISwitch) {
+        viewModel.toggleHideAmounts(sender.isOn)
+        updateUI()
     }
 
     private func configureTable() {
@@ -43,14 +61,21 @@ class DashboardViewController: UIViewController {
     }
 
     private func updateUI() {
-        dashboardView.balanceLabel.text = "$\(String(format: "%.2f", viewModel.balance))"
-        
-        dashboardView.totalBalanceLabel.text = "Saldo: $\(String(format: "%.2f", viewModel.balance))"
-        dashboardView.totalIngresosLabel.text = "Ingresos: $\(String(format: "%.2f", viewModel.ingresos))"
-        dashboardView.totalEgresosLabel.text = "Egresos: $\(String(format: "%.2f", viewModel.egresos))"
-        
+        if viewModel.shouldHideAmounts {
+            dashboardView.balanceLabel.text = "$ ****"
+            dashboardView.totalBalanceLabel.text = "Saldo: ****"
+            dashboardView.totalIngresosLabel.text = "Ingresos: ****"
+            dashboardView.totalEgresosLabel.text = "Egresos: ****"
+        } else {
+            dashboardView.balanceLabel.text = "$\(String(format: "%.2f", viewModel.balance))"
+            dashboardView.totalBalanceLabel.text = "Saldo: $\(String(format: "%.2f", viewModel.balance))"
+            dashboardView.totalIngresosLabel.text = "Ingresos: $\(String(format: "%.2f", viewModel.ingresos))"
+            dashboardView.totalEgresosLabel.text = "Egresos: $\(String(format: "%.2f", viewModel.egresos))"
+        }
+
         dashboardView.tableView.reloadData()
     }
+
 
 }
 
@@ -94,13 +119,27 @@ final class DashboardViewModel: ObservableObject {
     @Published var sections: [TransactionSection] = []
     @Published var isLoading = false
     @Published var errorMessage: String?
+    @Published var shouldHideAmounts: Bool = false
 
     private let getTransactionsUseCase: GetTransactionsUseCase
+   
+       private let getShouldHideUseCase: GetShouldHideAmountsUseCase
+       private let setShouldHideUseCase: SetShouldHideAmountsUseCase
 
-    init(getTransactionsUseCase: GetTransactionsUseCase) {
-        self.getTransactionsUseCase = getTransactionsUseCase
-    }
+    init(getTransactionsUseCase: GetTransactionsUseCase,
+             getShouldHideUseCase: GetShouldHideAmountsUseCase,
+             setShouldHideUseCase: SetShouldHideAmountsUseCase) {
+            self.getTransactionsUseCase = getTransactionsUseCase
+            self.getShouldHideUseCase = getShouldHideUseCase
+            self.setShouldHideUseCase = setShouldHideUseCase
+            self.shouldHideAmounts = getShouldHideUseCase.execute()
+        }
 
+    func toggleHideAmounts(_ value: Bool) {
+           shouldHideAmounts = value
+           setShouldHideUseCase.execute(value)
+       }
+    
     func fetchData() async {
         isLoading = true
         errorMessage = nil

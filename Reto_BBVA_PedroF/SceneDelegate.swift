@@ -18,9 +18,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
 
         // Dependencias
+        
+        
         let repository = TransactionRepositoryImpl()
-        let useCase = GetTransactionsUseCase(repository: repository)
-        let viewModel = DashboardViewModel(getTransactionsUseCase: useCase)
+        let transactionUseCase = GetTransactionsUseCase(repository: repository)
+
+        let settingsRepo = SettingsRepositoryImpl()
+        let getHideUseCase = GetShouldHideAmountsUseCase(repository: settingsRepo)
+        let setHideUseCase = SetShouldHideAmountsUseCase(repository: settingsRepo)
+
+        let viewModel = DashboardViewModel(
+            getTransactionsUseCase: transactionUseCase,
+            getShouldHideUseCase: getHideUseCase,
+            setShouldHideUseCase: setHideUseCase
+        )
 
         // Controlador principal
         let dashboardVC = DashboardViewController(viewModel: viewModel)
