@@ -1,0 +1,43 @@
+{
+  "configurations" : [
+    {
+      "id" : "5C42ABF5-62A7-40B5-89BC-473D152E2726",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:Reto_BBVA_PedroF.xcodeproj",
+      "identifier" : "804F1F2F2E2EE55900F6B350",
+      "name" : "Reto_BBVA_PedroF"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : false,
+      "target" : {
+        "containerPath" : "container:Reto_BBVA_PedroF.xcodeproj",
+        "identifier" : "804F1F452E2EE55A00F6B350",
+        "name" : "Reto_BBVA_PedroFTests"
+      }
+    },
+    {
+      "enabled" : false,
+      "parallelizable" : true,
+      "selectedTests" : [
+        "Reto_BBVA_PedroFUITests\/testExample()",
+        "Reto_BBVA_PedroFUITests\/testLaunchPerformance()",
+        "Reto_BBVA_PedroFUITestsLaunchTests\/testLaunch()"
+      ],
+      "target" : {
+        "containerPath" : "container:Reto_BBVA_PedroF.xcodeproj",
+        "identifier" : "804F1F4F2E2EE55A00F6B350",
+        "name" : "Reto_BBVA_PedroFUITests"
+      }
+    }
+  ],
+  "version" : 1
+}

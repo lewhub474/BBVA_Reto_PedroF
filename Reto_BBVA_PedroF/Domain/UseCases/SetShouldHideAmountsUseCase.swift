@@ -6,14 +6,14 @@
 //
 import Foundation
 
-final class SetShouldHideAmountsUseCase {
+final class SetShouldHideAmountsUseCase: UseCase {
     private let repository: SettingsRepository
 
-    init(repository: SettingsRepository) {
+    init(repository: SettingsRepository = SettingsRepositoryImpl()) {
         self.repository = repository
     }
 
-    func execute(_ hidden: Bool) {
+    func execute(_ hidden: Bool) -> Any? {
         repository.setShouldHideAmounts(hidden)
     }
 }

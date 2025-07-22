@@ -7,14 +7,12 @@
 
 final class ToggleBookmarkUseCase: UseCase {
     private let repository: BookmarkRepository
-
+    
     init(repository: BookmarkRepository = BookmarkRepositoryImpl()) {
         self.repository = repository
     }
-
-    @discardableResult
+    
     func execute(_ id: Int) -> Any? {
         repository.toggleBookmark(id: id)
-        return nil
     }
 }

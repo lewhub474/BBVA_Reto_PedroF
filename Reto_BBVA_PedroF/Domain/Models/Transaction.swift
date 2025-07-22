@@ -6,12 +6,17 @@
 //
 import Foundation
 
-struct Transaction: Decodable {
+enum TransactionType: String, Decodable {
+    case income = "ingreso"
+    case expense = "egreso"
+}
+
+struct Transaction: Decodable, Equatable {
     let id: Int
     let name: String
     let amount: Double
     let date: String
-    let type: String // "ingreso" o "egreso"
+    let type: TransactionType
 }
 
 // TransactionSection.swift

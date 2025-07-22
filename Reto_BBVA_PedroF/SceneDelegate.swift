@@ -16,38 +16,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                willConnectTo session: UISceneSession,
                options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
-
-        // MARK: - Dependencias
-
-        // Transacciones
-        let transactionRepository = TransactionRepositoryImpl()
-        let getTransactionsUseCase = GetTransactionsUseCase(repository: transactionRepository)
-
-        // Configuración de visibilidad de montos
-        let settingsRepository = SettingsRepositoryImpl()
-        let getHideUseCase = GetShouldHideAmountsUseCase(repository: settingsRepository)
-        let setHideUseCase = SetShouldHideAmountsUseCase(repository: settingsRepository)
-
-        // ViewModel
-        let viewModel = DashboardViewModel(
-            getTransactionsUseCase: getTransactionsUseCase,
-            getShouldHideUseCase: getHideUseCase,
-            setShouldHideUseCase: setHideUseCase
-        )
-
-        // MARK: - Root Controller
+        
+        let viewModel = DashboardViewModel()
         let dashboardVC = DashboardViewController(viewModel: viewModel)
         let navController = UINavigationController(rootViewController: dashboardVC)
-
-        // MARK: - Window
         let window = UIWindow(windowScene: windowScene)
         window.rootViewController = navController
         window.makeKeyAndVisible()
         self.window = window
     }
-
-
-
 
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.

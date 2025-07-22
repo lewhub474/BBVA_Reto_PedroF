@@ -52,7 +52,9 @@ class DashboardViewController: UIViewController {
 
     @objc private func toggleSwitchChanged(_ sender: UISwitch) {
         viewModel.toggleHideAmounts(sender.isOn)
+        transactionListView.dataUpdated()
         updateUI()
+       
     }
 
     private func configureTable() {

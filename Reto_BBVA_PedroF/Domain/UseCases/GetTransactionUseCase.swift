@@ -10,7 +10,7 @@ import Foundation
 final class GetTransactionsUseCase: AsyncUseCase {
     private let repository: TransactionRepository
 
-    init(repository: TransactionRepository) {
+    init(repository: TransactionRepository = TransactionRepositoryImpl()) {
         self.repository = repository
     }
 

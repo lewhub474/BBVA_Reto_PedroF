@@ -146,7 +146,7 @@ extension TransactionListView: UITableViewDataSource {
 
         cell.configure(
             with: transaction,
-            showAmounts: delegate?.isAmountHide() ?? false,
+            showAmounts: !(delegate?.isAmountHide() ?? false),
             isBookmarked: isBookmarked
         ) { [weak self] id in
             self?.delegate?.bookmarkPressed(by: id)

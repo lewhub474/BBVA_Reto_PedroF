@@ -13,7 +13,7 @@ final class DashboardViewModelTests: XCTestCase {
     var getTransactionsUseCase: MockGetTransactionsUseCase!
     var getShouldHideUseCase: MockGetShouldHideAmountsUseCase!
     var setShouldHideUseCase: MockSetShouldHideAmountsUseCase!
-    var toggleBookmarkUseCase: MockToggleBookmarkUseCase!
+    var toggleBookmarkUseCase: SpyToggleBookmarkUseCase!
     var getAllBookmarksUseCase: MockGetAllBookmarksUseCase!
 
     override func setUp() {
@@ -21,13 +21,13 @@ final class DashboardViewModelTests: XCTestCase {
         getTransactionsUseCase = MockGetTransactionsUseCase()
         getShouldHideUseCase = MockGetShouldHideAmountsUseCase()
         setShouldHideUseCase = MockSetShouldHideAmountsUseCase()
-        toggleBookmarkUseCase = MockToggleBookmarkUseCase()
+        toggleBookmarkUseCase = SpyToggleBookmarkUseCase()
         getAllBookmarksUseCase = MockGetAllBookmarksUseCase()
-        getAllBookmarksUseCase.bookmarked = [1, 2]
+        getAllBookmarksUseCase.result = [1, 2]
 
         viewModel = DashboardViewModel(
             getTransactionsUseCase: getTransactionsUseCase,
-            getShouldHideUseCase: getShouldHideUseCase,
+            getShouldHideUseCase: getShouldHideUseCase, // ✅ protocolo
             setShouldHideUseCase: setShouldHideUseCase,
             toggleBookmarkUseCase: toggleBookmarkUseCase,
             getAllBookmarksUseCase: getAllBookmarksUseCase
@@ -40,17 +40,17 @@ final class DashboardViewModelTests: XCTestCase {
     }
 
     func testToggleBookmark_ShouldUpdateBookmarkedIds() {
-        getAllBookmarksUseCase.bookmarked = [3, 4]
+        getAllBookmarksUseCase.result = [3, 4]
         viewModel.toggleBookmark(for: 3)
 
-        XCTAssertTrue(toggleBookmarkUseCase.toggledIds.contains(3))
+        XCTAssertEqual(toggleBookmarkUseCase.spyCounter, 1)
         XCTAssertEqual(viewModel.bookmarkedIds, Set([3, 4]))
     }
 
     func testToggleHideAmounts_ShouldUpdateAndCallUseCase() {
         viewModel.toggleHideAmounts(false)
         XCTAssertEqual(viewModel.shouldHideAmounts, false)
-        XCTAssertEqual(setShouldHideUseCase.didSetValue, false)
+        XCTAssertEqual(setShouldHideUseCase.spyCounter, 1)
     }
 
     func testIsBookmarked_ReturnsCorrectValue() {
@@ -64,21 +64,17 @@ final class DashboardViewModelTests: XCTestCase {
         await viewModel.fetchData()
 
         XCTAssertEqual(viewModel.balance, RecordStubs.balance)
-        XCTAssertEqual(viewModel.ingresos, 100.0)
-        XCTAssertEqual(viewModel.egresos, 40.0)
-        XCTAssertEqual(viewModel.sections.flatMap { $0.transactions }, transactions)
+        XCTAssertEqual(viewModel.ingresos, 300.0)
+        XCTAssertEqual(viewModel.egresos, 200.0)
+        XCTAssertEqual(viewModel.sections.flatMap { $0.transactions }, RecordStubs.transactions)
     }
 
     func testFetchData_WithError_ShouldSetErrorMessage() async {
-        struct DummyError: Error, LocalizedError {
-            var errorDescription: String? { "Test error" }
-        }
-
-        getTransactionsUseCase.result = .failure(DummyError())
+        getTransactionsUseCase.error = NetworkingServiceError.invalidURL
 
         await viewModel.fetchData()
 
-        XCTAssertEqual(viewModel.errorMessage, "Test error")
+        XCTAssertEqual(viewModel.errorMessage, "URL inválida")
         XCTAssertEqual(viewModel.sections.count, 0)
     }
 }

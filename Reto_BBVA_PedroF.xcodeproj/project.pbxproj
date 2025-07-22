@@ -38,6 +38,14 @@
 		804F1FEE2E2F3A4700F6B350 /* TransactionSelectionRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804F1FED2E2F3A4300F6B350 /* TransactionSelectionRepositoryImpl.swift */; };
 		804F1FF02E2F3B4100F6B350 /* GetSelectedTransactionsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804F1FEF2E2F3B4000F6B350 /* GetSelectedTransactionsUseCase.swift */; };
 		804F1FF22E2F3B8100F6B350 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804F1FF12E2F3B7A00F6B350 /* DashboardViewModel.swift */; };
+		80B956752E301C6B00751855 /* MockGetShouldHideAmountsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B9566B2E301C6B00751855 /* MockGetShouldHideAmountsUseCase.swift */; };
+		80B956762E301C6B00751855 /* MockGetTransactionsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B9566C2E301C6B00751855 /* MockGetTransactionsUseCase.swift */; };
+		80B956772E301C6B00751855 /* SpyToggleBookmarkUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B9566D2E301C6B00751855 /* SpyToggleBookmarkUseCase.swift */; };
+		80B956782E301C6B00751855 /* MockSetShouldHideAmountsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B9566E2E301C6B00751855 /* MockSetShouldHideAmountsUseCase.swift */; };
+		80B956792E301C6B00751855 /* RecordStubs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B956702E301C6B00751855 /* RecordStubs.swift */; };
+		80B9567A2E301C6B00751855 /* DashboardViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B956722E301C6B00751855 /* DashboardViewModelTests.swift */; };
+		80B9567B2E301C6B00751855 /* Reto_BBVA_PedroFTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B956732E301C6B00751855 /* Reto_BBVA_PedroFTests.swift */; };
+		80B9567E2E301FCA00751855 /* MockGetAllBookmarksUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B9567D2E301FC700751855 /* MockGetAllBookmarksUseCase.swift */; };
 		80E9A0AF2E2FCCD300196FBE /* BookmarkRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E9A0AE2E2FCCCD00196FBE /* BookmarkRepository.swift */; };
 		80E9A0B12E2FCCF700196FBE /* BookmarkRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E9A0B02E2FCCF500196FBE /* BookmarkRepositoryImpl.swift */; };
 		9D8C3B052E2FD76C00F6E9BB /* StorableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8C3B042E2FD76300F6E9BB /* StorableItem.swift */; };
@@ -68,6 +76,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6C23CD442E30246B00287916 /* Reto_BBVA_PedroF.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Reto_BBVA_PedroF.xctestplan; sourceTree = SOURCE_ROOT; };
 		804F1F302E2EE55900F6B350 /* Reto_BBVA_PedroF.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reto_BBVA_PedroF.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		804F1F462E2EE55A00F6B350 /* Reto_BBVA_PedroFTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Reto_BBVA_PedroFTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		804F1F502E2EE55A00F6B350 /* Reto_BBVA_PedroFUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Reto_BBVA_PedroFUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -103,6 +112,14 @@
 		804F1FED2E2F3A4300F6B350 /* TransactionSelectionRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionSelectionRepositoryImpl.swift; sourceTree = "<group>"; };
 		804F1FEF2E2F3B4000F6B350 /* GetSelectedTransactionsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSelectedTransactionsUseCase.swift; sourceTree = "<group>"; };
 		804F1FF12E2F3B7A00F6B350 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
+		80B9566B2E301C6B00751855 /* MockGetShouldHideAmountsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockGetShouldHideAmountsUseCase.swift; sourceTree = "<group>"; };
+		80B9566C2E301C6B00751855 /* MockGetTransactionsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockGetTransactionsUseCase.swift; sourceTree = "<group>"; };
+		80B9566D2E301C6B00751855 /* SpyToggleBookmarkUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpyToggleBookmarkUseCase.swift; sourceTree = "<group>"; };
+		80B9566E2E301C6B00751855 /* MockSetShouldHideAmountsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSetShouldHideAmountsUseCase.swift; sourceTree = "<group>"; };
+		80B956702E301C6B00751855 /* RecordStubs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordStubs.swift; sourceTree = "<group>"; };
+		80B956722E301C6B00751855 /* DashboardViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModelTests.swift; sourceTree = "<group>"; };
+		80B956732E301C6B00751855 /* Reto_BBVA_PedroFTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reto_BBVA_PedroFTests.swift; sourceTree = "<group>"; };
+		80B9567D2E301FC700751855 /* MockGetAllBookmarksUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockGetAllBookmarksUseCase.swift; sourceTree = "<group>"; };
 		80E9A0AE2E2FCCCD00196FBE /* BookmarkRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkRepository.swift; sourceTree = "<group>"; };
 		80E9A0B02E2FCCF500196FBE /* BookmarkRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkRepositoryImpl.swift; sourceTree = "<group>"; };
 		9D8C3B042E2FD76300F6E9BB /* StorableItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorableItem.swift; sourceTree = "<group>"; };
@@ -116,11 +133,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		804F1F492E2EE55A00F6B350 /* Reto_BBVA_PedroFTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Reto_BBVA_PedroFTests;
-			sourceTree = "<group>";
-		};
 		804F1F532E2EE55A00F6B350 /* Reto_BBVA_PedroFUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = Reto_BBVA_PedroFUITests;
@@ -157,7 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				804F1FA42E2EECFD00F6B350 /* Reto_BBVA_PedroF */,
-				804F1F492E2EE55A00F6B350 /* Reto_BBVA_PedroFTests */,
+				80B956742E301C6B00751855 /* Reto_BBVA_PedroFTests */,
 				804F1F532E2EE55A00F6B350 /* Reto_BBVA_PedroFUITests */,
 				804F1F312E2EE55900F6B350 /* Products */,
 			);
@@ -283,6 +295,46 @@
 			path = Repositories;
 			sourceTree = "<group>";
 		};
+		80B9566F2E301C6B00751855 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				80B9566B2E301C6B00751855 /* MockGetShouldHideAmountsUseCase.swift */,
+				80B9566C2E301C6B00751855 /* MockGetTransactionsUseCase.swift */,
+				80B9566E2E301C6B00751855 /* MockSetShouldHideAmountsUseCase.swift */,
+				80B9567D2E301FC700751855 /* MockGetAllBookmarksUseCase.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		80B956712E301C6B00751855 /* Stubs */ = {
+			isa = PBXGroup;
+			children = (
+				80B956702E301C6B00751855 /* RecordStubs.swift */,
+			);
+			path = Stubs;
+			sourceTree = "<group>";
+		};
+		80B956742E301C6B00751855 /* Reto_BBVA_PedroFTests */ = {
+			isa = PBXGroup;
+			children = (
+				6C23CD442E30246B00287916 /* Reto_BBVA_PedroF.xctestplan */,
+				80B9567C2E301EF500751855 /* Spies */,
+				80B9566F2E301C6B00751855 /* Mocks */,
+				80B956712E301C6B00751855 /* Stubs */,
+				80B956722E301C6B00751855 /* DashboardViewModelTests.swift */,
+				80B956732E301C6B00751855 /* Reto_BBVA_PedroFTests.swift */,
+			);
+			path = Reto_BBVA_PedroFTests;
+			sourceTree = "<group>";
+		};
+		80B9567C2E301EF500751855 /* Spies */ = {
+			isa = PBXGroup;
+			children = (
+				80B9566D2E301C6B00751855 /* SpyToggleBookmarkUseCase.swift */,
+			);
+			path = Spies;
+			sourceTree = "<group>";
+		};
 		9D8C3B032E2FD73000F6E9BB /* UserDefaultsStore */ = {
 			isa = PBXGroup;
 			children = (
@@ -392,9 +444,6 @@
 			);
 			dependencies = (
 				804F1F482E2EE55A00F6B350 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				804F1F492E2EE55A00F6B350 /* Reto_BBVA_PedroFTests */,
 			);
 			name = Reto_BBVA_PedroFTests;
 			packageProductDependencies = (
@@ -547,6 +596,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80B9567E2E301FCA00751855 /* MockGetAllBookmarksUseCase.swift in Sources */,
+				80B956752E301C6B00751855 /* MockGetShouldHideAmountsUseCase.swift in Sources */,
+				80B956762E301C6B00751855 /* MockGetTransactionsUseCase.swift in Sources */,
+				80B956772E301C6B00751855 /* SpyToggleBookmarkUseCase.swift in Sources */,
+				80B956782E301C6B00751855 /* MockSetShouldHideAmountsUseCase.swift in Sources */,
+				80B956792E301C6B00751855 /* RecordStubs.swift in Sources */,
+				80B9567A2E301C6B00751855 /* DashboardViewModelTests.swift in Sources */,
+				80B9567B2E301C6B00751855 /* Reto_BBVA_PedroFTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

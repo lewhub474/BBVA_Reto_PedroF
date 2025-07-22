@@ -18,18 +18,18 @@ final class DashboardViewModel {
 
     private(set) var bookmarkedIds: Set<Int> = []
 
-    private let getTransactionsUseCase: GetTransactionsUseCase
+    private let getTransactionsUseCase: any AsyncUseCase<Any?, Record>
 
-    private let getShouldHideUseCase: GetShouldHideAmountsUseCase
-    private let setShouldHideUseCase: SetShouldHideAmountsUseCase
+    private let getShouldHideUseCase: any UseCase<Any?, Bool>
+    private let setShouldHideUseCase: any UseCase<Bool, Any?>
 
     private let getAllBookmarksUseCase: any UseCase<Any?, [Int]>
     private let toggleBookmarkUseCase: any UseCase<Int, Any?>
 
     init(
-        getTransactionsUseCase: GetTransactionsUseCase,
-        getShouldHideUseCase: GetShouldHideAmountsUseCase,
-        setShouldHideUseCase: SetShouldHideAmountsUseCase,
+        getTransactionsUseCase: any AsyncUseCase<Any?, Record> = GetTransactionsUseCase(),
+        getShouldHideUseCase: any UseCase<Any?, Bool> = GetShouldHideAmountsUseCase(),
+        setShouldHideUseCase: any UseCase<Bool, Any?> = SetShouldHideAmountsUseCase(),
         toggleBookmarkUseCase: any UseCase<Int, Any?> = ToggleBookmarkUseCase(),
         getAllBookmarksUseCase: any UseCase<Any?, [Int]> = GetAllBookmarksUseCase()
     ) {
@@ -38,7 +38,7 @@ final class DashboardViewModel {
         self.setShouldHideUseCase = setShouldHideUseCase
         self.toggleBookmarkUseCase = toggleBookmarkUseCase
         self.getAllBookmarksUseCase = getAllBookmarksUseCase
-        self.shouldHideAmounts = getShouldHideUseCase.execute()
+        self.shouldHideAmounts = getShouldHideUseCase.execute(nil)
         let bookMarkIds = getAllBookmarksUseCase.execute(nil).compactMap{ $0 }
         self.bookmarkedIds = Set(bookMarkIds)
     }
@@ -68,12 +68,12 @@ final class DashboardViewModel {
 
             let allTransactions = record.transactions
             ingresos = allTransactions
-                .filter { $0.type == "ingreso" }
+                .filter { $0.type == .income }
                 .map { $0.amount }
                 .reduce(0, +)
 
             egresos = allTransactions
-                .filter { $0.type == "egreso" }
+                .filter { $0.type == .expense }
                 .map { abs($0.amount) }
                 .reduce(0, +)
 
