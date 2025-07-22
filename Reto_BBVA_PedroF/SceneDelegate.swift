@@ -15,20 +15,24 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene,
                willConnectTo session: UISceneSession,
                options connectionOptions: UIScene.ConnectionOptions) {
-
         guard let windowScene = (scene as? UIWindowScene) else { return }
 
-        let window = UIWindow(windowScene: windowScene)
-        
-        // Aquí se crea el DashboardViewController como raíz
-        let dashboardVC = DashboardViewController()
-        let navigationController = UINavigationController(rootViewController: dashboardVC)
+        // Dependencias
+        let repository = TransactionRepositoryImpl()
+        let useCase = GetTransactionsUseCase(repository: repository)
+        let viewModel = DashboardViewModel(getTransactionsUseCase: useCase)
 
-        window.rootViewController = navigationController
+        // Controlador principal
+        let dashboardVC = DashboardViewController(viewModel: viewModel)
+        let navController = UINavigationController(rootViewController: dashboardVC)
+
+        // Ventana
+        let window = UIWindow(windowScene: windowScene)
+        window.rootViewController = navController
         window.makeKeyAndVisible()
-        
         self.window = window
     }
+
 
 
     func sceneDidDisconnect(_ scene: UIScene) {

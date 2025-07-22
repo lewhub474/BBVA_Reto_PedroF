@@ -21,6 +21,15 @@
 		804F1FBE2E2EF3D600F6B350 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804F1FBD2E2EF3D100F6B350 /* DashboardView.swift */; };
 		804F1FC02E2EF3E900F6B350 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804F1FBF2E2EF3E500F6B350 /* DashboardViewModel.swift */; };
 		804F1FC32E2EF8C800F6B350 /* TransactionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804F1FC22E2EF8C300F6B350 /* TransactionsViewModel.swift */; };
+		804F1FCE2E2EFF5500F6B350 /* TransactionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804F1FCD2E2EFF4B00F6B350 /* TransactionService.swift */; };
+		804F1FD02E2EFF7400F6B350 /* TransactionServiceProtrocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804F1FCF2E2EFF6800F6B350 /* TransactionServiceProtrocol.swift */; };
+		804F1FD22E2F001100F6B350 /* TransactionServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804F1FD12E2F000D00F6B350 /* TransactionServiceError.swift */; };
+		804F1FD42E2F02CD00F6B350 /* TransactionEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804F1FD32E2F02C300F6B350 /* TransactionEndpoint.swift */; };
+		804F1FD62E2F02DF00F6B350 /* Enviroment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804F1FD52E2F02DD00F6B350 /* Enviroment.swift */; };
+		804F1FD82E2F030800F6B350 /* TransactionRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804F1FD72E2F02FE00F6B350 /* TransactionRequestBuilder.swift */; };
+		804F1FDB2E2F078000F6B350 /* TransactionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804F1FDA2E2F077A00F6B350 /* TransactionRepository.swift */; };
+		804F1FDF2E2F07D200F6B350 /* TransactionRepositoryImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804F1FDE2E2F07C500F6B350 /* TransactionRepositoryImp.swift */; };
+		804F1FE22E2F0C8800F6B350 /* GetTransactionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804F1FE12E2F0C6500F6B350 /* GetTransactionUseCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +68,15 @@
 		804F1FBD2E2EF3D100F6B350 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		804F1FBF2E2EF3E500F6B350 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
 		804F1FC22E2EF8C300F6B350 /* TransactionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewModel.swift; sourceTree = "<group>"; };
+		804F1FCD2E2EFF4B00F6B350 /* TransactionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionService.swift; sourceTree = "<group>"; };
+		804F1FCF2E2EFF6800F6B350 /* TransactionServiceProtrocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionServiceProtrocol.swift; sourceTree = "<group>"; };
+		804F1FD12E2F000D00F6B350 /* TransactionServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionServiceError.swift; sourceTree = "<group>"; };
+		804F1FD32E2F02C300F6B350 /* TransactionEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionEndpoint.swift; sourceTree = "<group>"; };
+		804F1FD52E2F02DD00F6B350 /* Enviroment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enviroment.swift; sourceTree = "<group>"; };
+		804F1FD72E2F02FE00F6B350 /* TransactionRequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRequestBuilder.swift; sourceTree = "<group>"; };
+		804F1FDA2E2F077A00F6B350 /* TransactionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRepository.swift; sourceTree = "<group>"; };
+		804F1FDE2E2F07C500F6B350 /* TransactionRepositoryImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRepositoryImp.swift; sourceTree = "<group>"; };
+		804F1FE12E2F0C6500F6B350 /* GetTransactionUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTransactionUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -123,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				804F1FB52E2EED3A00F6B350 /* Entities */,
+				804F1FD92E2F077000F6B350 /* Repositories */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -142,6 +161,8 @@
 			children = (
 				804F1F992E2EECFD00F6B350 /* Presentation */,
 				804F1F982E2EECFD00F6B350 /* Domain */,
+				804F1FDC2E2F07B400F6B350 /* Data */,
+				804F1FCC2E2EFF0900F6B350 /* Networking */,
 				804F1F9A2E2EECFD00F6B350 /* AppDelegate.swift */,
 				804F1F9B2E2EECFD00F6B350 /* Assets.xcassets */,
 				804F1F9C2E2EECFD00F6B350 /* Info.plist */,
@@ -187,6 +208,52 @@
 				804F1FBF2E2EF3E500F6B350 /* DashboardViewModel.swift */,
 			);
 			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		804F1FCC2E2EFF0900F6B350 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				804F1FCD2E2EFF4B00F6B350 /* TransactionService.swift */,
+				804F1FD12E2F000D00F6B350 /* TransactionServiceError.swift */,
+				804F1FCF2E2EFF6800F6B350 /* TransactionServiceProtrocol.swift */,
+				804F1FD32E2F02C300F6B350 /* TransactionEndpoint.swift */,
+				804F1FD52E2F02DD00F6B350 /* Enviroment.swift */,
+				804F1FD72E2F02FE00F6B350 /* TransactionRequestBuilder.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		804F1FD92E2F077000F6B350 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				804F1FDA2E2F077A00F6B350 /* TransactionRepository.swift */,
+				804F1FE02E2F0C5B00F6B350 /* UsesCases */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		804F1FDC2E2F07B400F6B350 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				804F1FDD2E2F07BD00F6B350 /* Repositories */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		804F1FDD2E2F07BD00F6B350 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				804F1FDE2E2F07C500F6B350 /* TransactionRepositoryImp.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		804F1FE02E2F0C5B00F6B350 /* UsesCases */ = {
+			isa = PBXGroup;
+			children = (
+				804F1FE12E2F0C6500F6B350 /* GetTransactionUseCase.swift */,
+			);
+			path = UsesCases;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -334,16 +401,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				804F1FA52E2EECFD00F6B350 /* AppDelegate.swift in Sources */,
+				804F1FCE2E2EFF5500F6B350 /* TransactionService.swift in Sources */,
+				804F1FDF2E2F07D200F6B350 /* TransactionRepositoryImp.swift in Sources */,
+				804F1FE22E2F0C8800F6B350 /* GetTransactionUseCase.swift in Sources */,
+				804F1FD62E2F02DF00F6B350 /* Enviroment.swift in Sources */,
 				804F1FC02E2EF3E900F6B350 /* DashboardViewModel.swift in Sources */,
+				804F1FD22E2F001100F6B350 /* TransactionServiceError.swift in Sources */,
+				804F1FD42E2F02CD00F6B350 /* TransactionEndpoint.swift in Sources */,
 				804F1FA62E2EECFD00F6B350 /* SceneDelegate.swift in Sources */,
+				804F1FD02E2EFF7400F6B350 /* TransactionServiceProtrocol.swift in Sources */,
 				804F1FA72E2EECFD00F6B350 /* TransactionsView.swift in Sources */,
 				804F1FB82E2EED8D00F6B350 /* TransactionResponse.swift in Sources */,
 				804F1FBE2E2EF3D600F6B350 /* DashboardView.swift in Sources */,
 				804F1FC32E2EF8C800F6B350 /* TransactionsViewModel.swift in Sources */,
 				804F1FBA2E2EED9600F6B350 /* Record.swift in Sources */,
 				804F1FA82E2EECFD00F6B350 /* ViewController.swift in Sources */,
+				804F1FDB2E2F078000F6B350 /* TransactionRepository.swift in Sources */,
 				804F1FBC2E2EEE0E00F6B350 /* TransactionCell.swift in Sources */,
 				804F1FAE2E2EED1B00F6B350 /* Transaction.swift in Sources */,
+				804F1FD82E2F030800F6B350 /* TransactionRequestBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

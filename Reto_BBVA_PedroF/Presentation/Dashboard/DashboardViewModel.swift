@@ -10,8 +10,16 @@ import UIKit
 class DashboardViewController: UIViewController {
 
     private let dashboardView = DashboardView()
-    private var sections: [TransactionSection] = []
-    private var balance: Double = 0
+    private let viewModel: DashboardViewModel
+
+    init(viewModel: DashboardViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func loadView() {
         view = dashboardView
@@ -19,64 +27,85 @@ class DashboardViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .black
+        title = "Dashboard"
         configureTable()
-        fetchData()
-    }
 
-    private func configureTable() {
-        let table = dashboardView.tableView
-        table.delegate = self
-        table.dataSource = self
-    }
-
-    private func fetchData() {
-        TransactionService.shared.fetchTransactions { [weak self] result in
-            guard let self = self else { return }
-            switch result {
-            case .success(let record):
-                self.balance = record.balance
-                self.sections = record.transactions.groupedByDate()
-                self.updateUI()
-            case .failure(let error):
-                print("Error:", error)
-                // Aquí puedes mostrar alerta de error
-            }
+        Task {
+            await viewModel.fetchData()
+            updateUI()
         }
     }
 
+    private func configureTable() {
+        dashboardView.tableView.delegate = self
+        dashboardView.tableView.dataSource = self
+    }
+
     private func updateUI() {
-        dashboardView.balanceLabel.text = String(
-            format: "Balance: $%.2f", abs(balance)
-        )
+        dashboardView.balanceLabel.text = "$\(String(format: "%.2f", viewModel.balance))"
         dashboardView.tableView.reloadData()
     }
 }
 
+
+
 extension DashboardViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        sections.count
+        return viewModel.sections.count
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        sections[section].transactions.count
+        return viewModel.sections[section].transactions.count
     }
 
-    func tableView(_ tableView: UITableView,
-                   cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let transaction = sections[indexPath.section].transactions[indexPath.row]
-        let cell = tableView.dequeueReusableCell(
-            withIdentifier: "TransactionCell", for: indexPath
-        ) as! TransactionCell
-        cell.configure(with: transaction, showAmounts: true)
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "TransactionCell", for: indexPath) as? TransactionCell else {
+            return UITableViewCell()
+        }
+
+        let transaction = viewModel.sections[indexPath.section].transactions[indexPath.row]
+        cell.configure(with: transaction)
         return cell
     }
 
-    func tableView(_ tableView: UITableView,
-                   titleForHeaderInSection section: Int) -> String? {
-        sections[section].date
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return viewModel.sections[section].date
     }
 }
 
 extension DashboardViewController: UITableViewDelegate {
-    // Personaliza altura de cabecera, selección, etc., si lo deseas
+    // Implementa si necesitas altura personalizada o interacción
+}
+
+
+import Foundation
+
+@MainActor
+final class DashboardViewModel: ObservableObject {
+    @Published var balance: Double = 0.0
+    @Published var sections: [TransactionSection] = []
+    @Published var isLoading = false
+    @Published var errorMessage: String?
+
+    private let getTransactionsUseCase: GetTransactionsUseCase
+
+    init(getTransactionsUseCase: GetTransactionsUseCase) {
+        self.getTransactionsUseCase = getTransactionsUseCase
+    }
+
+    func fetchData() async {
+        isLoading = true
+        errorMessage = nil
+
+        do {
+            let record = try await getTransactionsUseCase.execute()
+            balance = record.balance
+            sections = record.transactions.groupedByDate()
+        } catch {
+            errorMessage = error.localizedDescription
+        }
+
+        isLoading = false
+    }
 }
