@@ -17,32 +17,35 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
 
-        // Dependencias
-        
-        
-        let repository = TransactionRepositoryImpl()
-        let transactionUseCase = GetTransactionsUseCase(repository: repository)
+        // MARK: - Dependencias
 
-        let settingsRepo = SettingsRepositoryImpl()
-        let getHideUseCase = GetShouldHideAmountsUseCase(repository: settingsRepo)
-        let setHideUseCase = SetShouldHideAmountsUseCase(repository: settingsRepo)
+        // Transacciones
+        let transactionRepository = TransactionRepositoryImpl()
+        let getTransactionsUseCase = GetTransactionsUseCase(repository: transactionRepository)
 
+        // Configuración de visibilidad de montos
+        let settingsRepository = SettingsRepositoryImpl()
+        let getHideUseCase = GetShouldHideAmountsUseCase(repository: settingsRepository)
+        let setHideUseCase = SetShouldHideAmountsUseCase(repository: settingsRepository)
+
+        // ViewModel
         let viewModel = DashboardViewModel(
-            getTransactionsUseCase: transactionUseCase,
+            getTransactionsUseCase: getTransactionsUseCase,
             getShouldHideUseCase: getHideUseCase,
             setShouldHideUseCase: setHideUseCase
         )
 
-        // Controlador principal
+        // MARK: - Root Controller
         let dashboardVC = DashboardViewController(viewModel: viewModel)
         let navController = UINavigationController(rootViewController: dashboardVC)
 
-        // Ventana
+        // MARK: - Window
         let window = UIWindow(windowScene: windowScene)
         window.rootViewController = navController
         window.makeKeyAndVisible()
         self.window = window
     }
+
 
 
 

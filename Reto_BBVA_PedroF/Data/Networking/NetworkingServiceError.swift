@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum TransactionServiceError: Error, LocalizedError {
+enum NetworkingServiceError: Error, LocalizedError {
     case invalidURL
     case decodingError
     case serverError(code: Int)

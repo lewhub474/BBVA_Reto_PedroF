@@ -16,7 +16,7 @@ struct TransactionRequestBuilder {
         environment: Environment = .development
     ) throws -> URLRequest {
         guard let baseURL = environment.baseURL else {
-            throw TransactionServiceError.invalidURL
+            throw NetworkingServiceError.invalidURL
         }
 
         let url = endpoint.url(baseURL: baseURL)

@@ -20,19 +20,19 @@ final class TransactionRepositoryImpl: TransactionRepository {
         do {
             (data, response) = try await URLSession.shared.data(for: request)
         } catch {
-            throw TransactionServiceError.requestFailed(error)
+            throw NetworkingServiceError.requestFailed(error)
         }
         
         guard let httpResponse = response as? HTTPURLResponse,
               200..<300 ~= httpResponse.statusCode else {
-            throw TransactionServiceError.serverError(code: (response as? HTTPURLResponse)?.statusCode ?? -1)
+            throw NetworkingServiceError.serverError(code: (response as? HTTPURLResponse)?.statusCode ?? -1)
         }
         
         do {
             let decoded = try JSONDecoder().decode(TransactionResponse.self, from: data)
             return decoded.record
         } catch {
-            throw TransactionServiceError.decodingError
+            throw NetworkingServiceError.decodingError
         }
     }
 }

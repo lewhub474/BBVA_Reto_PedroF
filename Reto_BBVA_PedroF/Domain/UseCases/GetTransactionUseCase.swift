@@ -7,14 +7,14 @@
 
 import Foundation
 
-final class GetTransactionsUseCase {
+final class GetTransactionsUseCase: AsyncUseCase {
     private let repository: TransactionRepository
 
     init(repository: TransactionRepository) {
         self.repository = repository
     }
 
-    func execute() async throws -> Record {
+    func execute(_ input: Any?) async throws -> Record {
         return try await repository.fetchTransactions()
     }
 }

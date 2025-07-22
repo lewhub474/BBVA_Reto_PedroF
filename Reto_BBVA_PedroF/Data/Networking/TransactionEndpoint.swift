@@ -15,7 +15,7 @@ enum TransactionEndpoint {
         switch self {
         case .getTransactions:
             return baseURL
-        case .custom(let path):
+        case .custom:
             return baseURL
         }
     }

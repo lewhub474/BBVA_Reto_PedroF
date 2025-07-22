@@ -18,24 +18,36 @@
 		804F1FB82E2EED8D00F6B350 /* TransactionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804F1FB72E2EED8000F6B350 /* TransactionResponse.swift */; };
 		804F1FBA2E2EED9600F6B350 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804F1FB92E2EED9300F6B350 /* Record.swift */; };
 		804F1FBC2E2EEE0E00F6B350 /* TransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804F1FBB2E2EEE0600F6B350 /* TransactionCell.swift */; };
-		804F1FBE2E2EF3D600F6B350 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804F1FBD2E2EF3D100F6B350 /* DashboardView.swift */; };
-		804F1FC02E2EF3E900F6B350 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804F1FBF2E2EF3E500F6B350 /* DashboardViewModel.swift */; };
+		804F1FBE2E2EF3D600F6B350 /* TransactionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804F1FBD2E2EF3D100F6B350 /* TransactionListView.swift */; };
+		804F1FC02E2EF3E900F6B350 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804F1FBF2E2EF3E500F6B350 /* DashboardViewController.swift */; };
 		804F1FC32E2EF8C800F6B350 /* TransactionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804F1FC22E2EF8C300F6B350 /* TransactionsViewModel.swift */; };
-		804F1FCE2E2EFF5500F6B350 /* TransactionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804F1FCD2E2EFF4B00F6B350 /* TransactionService.swift */; };
-		804F1FD02E2EFF7400F6B350 /* TransactionServiceProtrocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804F1FCF2E2EFF6800F6B350 /* TransactionServiceProtrocol.swift */; };
-		804F1FD22E2F001100F6B350 /* TransactionServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804F1FD12E2F000D00F6B350 /* TransactionServiceError.swift */; };
+		804F1FCE2E2EFF5500F6B350 /* NetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804F1FCD2E2EFF4B00F6B350 /* NetworkingService.swift */; };
+		804F1FD02E2EFF7400F6B350 /* NetworkingServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804F1FCF2E2EFF6800F6B350 /* NetworkingServiceProtocol.swift */; };
+		804F1FD22E2F001100F6B350 /* NetworkingServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804F1FD12E2F000D00F6B350 /* NetworkingServiceError.swift */; };
 		804F1FD42E2F02CD00F6B350 /* TransactionEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804F1FD32E2F02C300F6B350 /* TransactionEndpoint.swift */; };
 		804F1FD62E2F02DF00F6B350 /* Enviroment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804F1FD52E2F02DD00F6B350 /* Enviroment.swift */; };
 		804F1FD82E2F030800F6B350 /* TransactionRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804F1FD72E2F02FE00F6B350 /* TransactionRequestBuilder.swift */; };
 		804F1FDB2E2F078000F6B350 /* TransactionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804F1FDA2E2F077A00F6B350 /* TransactionRepository.swift */; };
 		804F1FDF2E2F07D200F6B350 /* TransactionRepositoryImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804F1FDE2E2F07C500F6B350 /* TransactionRepositoryImp.swift */; };
 		804F1FE22E2F0C8800F6B350 /* GetTransactionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804F1FE12E2F0C6500F6B350 /* GetTransactionUseCase.swift */; };
-		804F1FE42E2F359300F6B350 /* SettingsRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804F1FE32E2F359000F6B350 /* SettingsRepositoryProtocol.swift */; };
+		804F1FE42E2F359300F6B350 /* SettingsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804F1FE32E2F359000F6B350 /* SettingsRepository.swift */; };
 		804F1FE62E2F35BF00F6B350 /* SettingsRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804F1FE52E2F35B500F6B350 /* SettingsRepositoryImpl.swift */; };
 		804F1FE82E2F375C00F6B350 /* GetShouldHideAmountsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804F1FE72E2F375100F6B350 /* GetShouldHideAmountsUseCase.swift */; };
 		804F1FEA2E2F376400F6B350 /* SetShouldHideAmountsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804F1FE92E2F376300F6B350 /* SetShouldHideAmountsUseCase.swift */; };
 		804F1FEC2E2F3A2800F6B350 /* TransactionSelectionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804F1FEB2E2F3A2600F6B350 /* TransactionSelectionRepository.swift */; };
 		804F1FEE2E2F3A4700F6B350 /* TransactionSelectionRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804F1FED2E2F3A4300F6B350 /* TransactionSelectionRepositoryImpl.swift */; };
+		804F1FF02E2F3B4100F6B350 /* GetSelectedTransactionsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804F1FEF2E2F3B4000F6B350 /* GetSelectedTransactionsUseCase.swift */; };
+		804F1FF22E2F3B8100F6B350 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804F1FF12E2F3B7A00F6B350 /* DashboardViewModel.swift */; };
+		80E9A0AF2E2FCCD300196FBE /* BookmarkRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E9A0AE2E2FCCCD00196FBE /* BookmarkRepository.swift */; };
+		80E9A0B12E2FCCF700196FBE /* BookmarkRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E9A0B02E2FCCF500196FBE /* BookmarkRepositoryImpl.swift */; };
+		9D8C3B052E2FD76C00F6E9BB /* StorableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8C3B042E2FD76300F6E9BB /* StorableItem.swift */; };
+		9D8C3B072E2FD77C00F6E9BB /* KeyValueStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8C3B062E2FD77C00F6E9BB /* KeyValueStore.swift */; };
+		9D8C3B092E2FD79B00F6E9BB /* UserDefaultsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8C3B082E2FD79A00F6E9BB /* UserDefaultsStore.swift */; };
+		9D8C3B0D2E2FD87D00F6E9BB /* BookmarkDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8C3B0C2E2FD87700F6E9BB /* BookmarkDTO.swift */; };
+		9D8C3B102E2FDA7B00F6E9BB /* ToggleBookmarkUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8C3B0F2E2FDA7A00F6E9BB /* ToggleBookmarkUseCase.swift */; };
+		9D8C3B132E2FDB6500F6E9BB /* UseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8C3B122E2FDB6300F6E9BB /* UseCase.swift */; };
+		9D8C3B182E2FDD3F00F6E9BB /* GetAllBookmarksUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8C3B172E2FDD3E00F6E9BB /* GetAllBookmarksUseCase.swift */; };
+		9D8C3B252E2FF3AE00F6E9BB /* AsyncUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8C3B242E2FF3A800F6E9BB /* AsyncUseCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,24 +83,36 @@
 		804F1FB72E2EED8000F6B350 /* TransactionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionResponse.swift; sourceTree = "<group>"; };
 		804F1FB92E2EED9300F6B350 /* Record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
 		804F1FBB2E2EEE0600F6B350 /* TransactionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCell.swift; sourceTree = "<group>"; };
-		804F1FBD2E2EF3D100F6B350 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
-		804F1FBF2E2EF3E500F6B350 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
+		804F1FBD2E2EF3D100F6B350 /* TransactionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListView.swift; sourceTree = "<group>"; };
+		804F1FBF2E2EF3E500F6B350 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		804F1FC22E2EF8C300F6B350 /* TransactionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewModel.swift; sourceTree = "<group>"; };
-		804F1FCD2E2EFF4B00F6B350 /* TransactionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionService.swift; sourceTree = "<group>"; };
-		804F1FCF2E2EFF6800F6B350 /* TransactionServiceProtrocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionServiceProtrocol.swift; sourceTree = "<group>"; };
-		804F1FD12E2F000D00F6B350 /* TransactionServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionServiceError.swift; sourceTree = "<group>"; };
+		804F1FCD2E2EFF4B00F6B350 /* NetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingService.swift; sourceTree = "<group>"; };
+		804F1FCF2E2EFF6800F6B350 /* NetworkingServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingServiceProtocol.swift; sourceTree = "<group>"; };
+		804F1FD12E2F000D00F6B350 /* NetworkingServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingServiceError.swift; sourceTree = "<group>"; };
 		804F1FD32E2F02C300F6B350 /* TransactionEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionEndpoint.swift; sourceTree = "<group>"; };
 		804F1FD52E2F02DD00F6B350 /* Enviroment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enviroment.swift; sourceTree = "<group>"; };
 		804F1FD72E2F02FE00F6B350 /* TransactionRequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRequestBuilder.swift; sourceTree = "<group>"; };
 		804F1FDA2E2F077A00F6B350 /* TransactionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRepository.swift; sourceTree = "<group>"; };
 		804F1FDE2E2F07C500F6B350 /* TransactionRepositoryImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRepositoryImp.swift; sourceTree = "<group>"; };
 		804F1FE12E2F0C6500F6B350 /* GetTransactionUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTransactionUseCase.swift; sourceTree = "<group>"; };
-		804F1FE32E2F359000F6B350 /* SettingsRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRepositoryProtocol.swift; sourceTree = "<group>"; };
+		804F1FE32E2F359000F6B350 /* SettingsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRepository.swift; sourceTree = "<group>"; };
 		804F1FE52E2F35B500F6B350 /* SettingsRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRepositoryImpl.swift; sourceTree = "<group>"; };
 		804F1FE72E2F375100F6B350 /* GetShouldHideAmountsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetShouldHideAmountsUseCase.swift; sourceTree = "<group>"; };
 		804F1FE92E2F376300F6B350 /* SetShouldHideAmountsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetShouldHideAmountsUseCase.swift; sourceTree = "<group>"; };
 		804F1FEB2E2F3A2600F6B350 /* TransactionSelectionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionSelectionRepository.swift; sourceTree = "<group>"; };
 		804F1FED2E2F3A4300F6B350 /* TransactionSelectionRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionSelectionRepositoryImpl.swift; sourceTree = "<group>"; };
+		804F1FEF2E2F3B4000F6B350 /* GetSelectedTransactionsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSelectedTransactionsUseCase.swift; sourceTree = "<group>"; };
+		804F1FF12E2F3B7A00F6B350 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
+		80E9A0AE2E2FCCCD00196FBE /* BookmarkRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkRepository.swift; sourceTree = "<group>"; };
+		80E9A0B02E2FCCF500196FBE /* BookmarkRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkRepositoryImpl.swift; sourceTree = "<group>"; };
+		9D8C3B042E2FD76300F6E9BB /* StorableItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorableItem.swift; sourceTree = "<group>"; };
+		9D8C3B062E2FD77C00F6E9BB /* KeyValueStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyValueStore.swift; sourceTree = "<group>"; };
+		9D8C3B082E2FD79A00F6E9BB /* UserDefaultsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsStore.swift; sourceTree = "<group>"; };
+		9D8C3B0C2E2FD87700F6E9BB /* BookmarkDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkDTO.swift; sourceTree = "<group>"; };
+		9D8C3B0F2E2FDA7A00F6E9BB /* ToggleBookmarkUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleBookmarkUseCase.swift; sourceTree = "<group>"; };
+		9D8C3B122E2FDB6300F6E9BB /* UseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCase.swift; sourceTree = "<group>"; };
+		9D8C3B172E2FDD3E00F6E9BB /* GetAllBookmarksUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllBookmarksUseCase.swift; sourceTree = "<group>"; };
+		9D8C3B242E2FF3A800F6E9BB /* AsyncUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -152,8 +176,9 @@
 		804F1F982E2EECFD00F6B350 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				804F1FB52E2EED3A00F6B350 /* Entities */,
-				804F1FD92E2F077000F6B350 /* Repositories */,
+				804F1FB62E2EED4400F6B350 /* Models */,
+				9D8C3B0E2E2FDA7000F6E9BB /* UseCases */,
+				804F1FD92E2F077000F6B350 /* RepositoriesProtocols */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -161,6 +186,7 @@
 		804F1F992E2EECFD00F6B350 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				9D8C3B1A2E2FF1AC00F6E9BB /* Component */,
 				804F1FC42E2EF8D200F6B350 /* Dashboard */,
 				804F1FC12E2EF8B800F6B350 /* Transactions */,
 				804F1FBB2E2EEE0600F6B350 /* TransactionCell.swift */,
@@ -174,7 +200,6 @@
 				804F1F992E2EECFD00F6B350 /* Presentation */,
 				804F1F982E2EECFD00F6B350 /* Domain */,
 				804F1FDC2E2F07B400F6B350 /* Data */,
-				804F1FCC2E2EFF0900F6B350 /* Networking */,
 				804F1F9A2E2EECFD00F6B350 /* AppDelegate.swift */,
 				804F1F9B2E2EECFD00F6B350 /* Assets.xcassets */,
 				804F1F9C2E2EECFD00F6B350 /* Info.plist */,
@@ -184,14 +209,6 @@
 				804F1FA32E2EECFD00F6B350 /* ViewController.swift */,
 			);
 			path = Reto_BBVA_PedroF;
-			sourceTree = "<group>";
-		};
-		804F1FB52E2EED3A00F6B350 /* Entities */ = {
-			isa = PBXGroup;
-			children = (
-				804F1FB62E2EED4400F6B350 /* Models */,
-			);
-			path = Entities;
 			sourceTree = "<group>";
 		};
 		804F1FB62E2EED4400F6B350 /* Models */ = {
@@ -216,8 +233,8 @@
 		804F1FC42E2EF8D200F6B350 /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
-				804F1FBD2E2EF3D100F6B350 /* DashboardView.swift */,
-				804F1FBF2E2EF3E500F6B350 /* DashboardViewModel.swift */,
+				9D8C3B192E2FF19A00F6E9BB /* Views */,
+				804F1FF12E2F3B7A00F6B350 /* DashboardViewModel.swift */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -225,9 +242,9 @@
 		804F1FCC2E2EFF0900F6B350 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				804F1FCD2E2EFF4B00F6B350 /* TransactionService.swift */,
-				804F1FD12E2F000D00F6B350 /* TransactionServiceError.swift */,
-				804F1FCF2E2EFF6800F6B350 /* TransactionServiceProtrocol.swift */,
+				804F1FCD2E2EFF4B00F6B350 /* NetworkingService.swift */,
+				804F1FD12E2F000D00F6B350 /* NetworkingServiceError.swift */,
+				804F1FCF2E2EFF6800F6B350 /* NetworkingServiceProtocol.swift */,
 				804F1FD32E2F02C300F6B350 /* TransactionEndpoint.swift */,
 				804F1FD52E2F02DD00F6B350 /* Enviroment.swift */,
 				804F1FD72E2F02FE00F6B350 /* TransactionRequestBuilder.swift */,
@@ -235,22 +252,24 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
-		804F1FD92E2F077000F6B350 /* Repositories */ = {
+		804F1FD92E2F077000F6B350 /* RepositoriesProtocols */ = {
 			isa = PBXGroup;
 			children = (
 				804F1FEB2E2F3A2600F6B350 /* TransactionSelectionRepository.swift */,
-				804F1FED2E2F3A4300F6B350 /* TransactionSelectionRepositoryImpl.swift */,
 				804F1FDA2E2F077A00F6B350 /* TransactionRepository.swift */,
-				804F1FE32E2F359000F6B350 /* SettingsRepositoryProtocol.swift */,
-				804F1FE52E2F35B500F6B350 /* SettingsRepositoryImpl.swift */,
-				804F1FE02E2F0C5B00F6B350 /* UsesCases */,
+				80E9A0AE2E2FCCCD00196FBE /* BookmarkRepository.swift */,
+				804F1FE32E2F359000F6B350 /* SettingsRepository.swift */,
 			);
-			path = Repositories;
+			path = RepositoriesProtocols;
 			sourceTree = "<group>";
 		};
 		804F1FDC2E2F07B400F6B350 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				9D8C3B112E2FDB3200F6E9BB /* RepositoriesImplementation */,
+				804F1FCC2E2EFF0900F6B350 /* Networking */,
+				9D8C3B0B2E2FD87100F6E9BB /* DTO */,
+				9D8C3B032E2FD73000F6E9BB /* UserDefaultsStore */,
 				804F1FDD2E2F07BD00F6B350 /* Repositories */,
 			);
 			path = Data;
@@ -264,14 +283,79 @@
 			path = Repositories;
 			sourceTree = "<group>";
 		};
-		804F1FE02E2F0C5B00F6B350 /* UsesCases */ = {
+		9D8C3B032E2FD73000F6E9BB /* UserDefaultsStore */ = {
 			isa = PBXGroup;
 			children = (
-				804F1FE12E2F0C6500F6B350 /* GetTransactionUseCase.swift */,
-				804F1FE72E2F375100F6B350 /* GetShouldHideAmountsUseCase.swift */,
-				804F1FE92E2F376300F6B350 /* SetShouldHideAmountsUseCase.swift */,
+				9D8C3B082E2FD79A00F6E9BB /* UserDefaultsStore.swift */,
+				9D8C3B062E2FD77C00F6E9BB /* KeyValueStore.swift */,
+				9D8C3B042E2FD76300F6E9BB /* StorableItem.swift */,
 			);
-			path = UsesCases;
+			path = UserDefaultsStore;
+			sourceTree = "<group>";
+		};
+		9D8C3B0B2E2FD87100F6E9BB /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				9D8C3B0C2E2FD87700F6E9BB /* BookmarkDTO.swift */,
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
+		9D8C3B0E2E2FDA7000F6E9BB /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				9D8C3B232E2FF39900F6E9BB /* Protocols */,
+				9D8C3B172E2FDD3E00F6E9BB /* GetAllBookmarksUseCase.swift */,
+				804F1FEF2E2F3B4000F6B350 /* GetSelectedTransactionsUseCase.swift */,
+				804F1FE72E2F375100F6B350 /* GetShouldHideAmountsUseCase.swift */,
+				804F1FE12E2F0C6500F6B350 /* GetTransactionUseCase.swift */,
+				804F1FE92E2F376300F6B350 /* SetShouldHideAmountsUseCase.swift */,
+				9D8C3B0F2E2FDA7A00F6E9BB /* ToggleBookmarkUseCase.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		9D8C3B112E2FDB3200F6E9BB /* RepositoriesImplementation */ = {
+			isa = PBXGroup;
+			children = (
+				804F1FED2E2F3A4300F6B350 /* TransactionSelectionRepositoryImpl.swift */,
+				80E9A0B02E2FCCF500196FBE /* BookmarkRepositoryImpl.swift */,
+				804F1FE52E2F35B500F6B350 /* SettingsRepositoryImpl.swift */,
+			);
+			path = RepositoriesImplementation;
+			sourceTree = "<group>";
+		};
+		9D8C3B192E2FF19A00F6E9BB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				804F1FBF2E2EF3E500F6B350 /* DashboardViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9D8C3B1A2E2FF1AC00F6E9BB /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				9D8C3B1B2E2FF1B200F6E9BB /* TransactionListView */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		9D8C3B1B2E2FF1B200F6E9BB /* TransactionListView */ = {
+			isa = PBXGroup;
+			children = (
+				804F1FBD2E2EF3D100F6B350 /* TransactionListView.swift */,
+			);
+			path = TransactionListView;
+			sourceTree = "<group>";
+		};
+		9D8C3B232E2FF39900F6E9BB /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				9D8C3B242E2FF3A800F6E9BB /* AsyncUseCase.swift */,
+				9D8C3B122E2FDB6300F6E9BB /* UseCase.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -420,29 +504,41 @@
 			files = (
 				804F1FA52E2EECFD00F6B350 /* AppDelegate.swift in Sources */,
 				804F1FEE2E2F3A4700F6B350 /* TransactionSelectionRepositoryImpl.swift in Sources */,
-				804F1FCE2E2EFF5500F6B350 /* TransactionService.swift in Sources */,
+				804F1FCE2E2EFF5500F6B350 /* NetworkingService.swift in Sources */,
+				9D8C3B102E2FDA7B00F6E9BB /* ToggleBookmarkUseCase.swift in Sources */,
+				9D8C3B252E2FF3AE00F6E9BB /* AsyncUseCase.swift in Sources */,
 				804F1FDF2E2F07D200F6B350 /* TransactionRepositoryImp.swift in Sources */,
 				804F1FE22E2F0C8800F6B350 /* GetTransactionUseCase.swift in Sources */,
 				804F1FD62E2F02DF00F6B350 /* Enviroment.swift in Sources */,
-				804F1FC02E2EF3E900F6B350 /* DashboardViewModel.swift in Sources */,
-				804F1FD22E2F001100F6B350 /* TransactionServiceError.swift in Sources */,
+				804F1FC02E2EF3E900F6B350 /* DashboardViewController.swift in Sources */,
+				804F1FD22E2F001100F6B350 /* NetworkingServiceError.swift in Sources */,
 				804F1FD42E2F02CD00F6B350 /* TransactionEndpoint.swift in Sources */,
 				804F1FA62E2EECFD00F6B350 /* SceneDelegate.swift in Sources */,
-				804F1FD02E2EFF7400F6B350 /* TransactionServiceProtrocol.swift in Sources */,
+				804F1FD02E2EFF7400F6B350 /* NetworkingServiceProtocol.swift in Sources */,
+				9D8C3B0D2E2FD87D00F6E9BB /* BookmarkDTO.swift in Sources */,
+				9D8C3B072E2FD77C00F6E9BB /* KeyValueStore.swift in Sources */,
 				804F1FA72E2EECFD00F6B350 /* TransactionsView.swift in Sources */,
 				804F1FB82E2EED8D00F6B350 /* TransactionResponse.swift in Sources */,
-				804F1FBE2E2EF3D600F6B350 /* DashboardView.swift in Sources */,
+				804F1FBE2E2EF3D600F6B350 /* TransactionListView.swift in Sources */,
 				804F1FE82E2F375C00F6B350 /* GetShouldHideAmountsUseCase.swift in Sources */,
-				804F1FE42E2F359300F6B350 /* SettingsRepositoryProtocol.swift in Sources */,
+				804F1FF22E2F3B8100F6B350 /* DashboardViewModel.swift in Sources */,
+				804F1FE42E2F359300F6B350 /* SettingsRepository.swift in Sources */,
 				804F1FC32E2EF8C800F6B350 /* TransactionsViewModel.swift in Sources */,
 				804F1FBA2E2EED9600F6B350 /* Record.swift in Sources */,
+				9D8C3B092E2FD79B00F6E9BB /* UserDefaultsStore.swift in Sources */,
 				804F1FA82E2EECFD00F6B350 /* ViewController.swift in Sources */,
 				804F1FDB2E2F078000F6B350 /* TransactionRepository.swift in Sources */,
 				804F1FEA2E2F376400F6B350 /* SetShouldHideAmountsUseCase.swift in Sources */,
 				804F1FBC2E2EEE0E00F6B350 /* TransactionCell.swift in Sources */,
 				804F1FAE2E2EED1B00F6B350 /* Transaction.swift in Sources */,
+				9D8C3B052E2FD76C00F6E9BB /* StorableItem.swift in Sources */,
 				804F1FE62E2F35BF00F6B350 /* SettingsRepositoryImpl.swift in Sources */,
+				80E9A0B12E2FCCF700196FBE /* BookmarkRepositoryImpl.swift in Sources */,
+				804F1FF02E2F3B4100F6B350 /* GetSelectedTransactionsUseCase.swift in Sources */,
 				804F1FD82E2F030800F6B350 /* TransactionRequestBuilder.swift in Sources */,
+				9D8C3B182E2FDD3F00F6E9BB /* GetAllBookmarksUseCase.swift in Sources */,
+				9D8C3B132E2FDB6500F6E9BB /* UseCase.swift in Sources */,
+				80E9A0AF2E2FCCD300196FBE /* BookmarkRepository.swift in Sources */,
 				804F1FEC2E2F3A2800F6B350 /* TransactionSelectionRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,5 +9,5 @@ import Foundation
 
 struct Record: Decodable {
     let balance: Double
-    let transactions: [Transaction]
+    var transactions: [Transaction]
 }

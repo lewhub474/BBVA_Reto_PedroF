@@ -7,14 +7,21 @@
 
 import UIKit
 
-class DashboardView: UIView {
+protocol TransactionListViewDelegate: AnyObject {
+    func getTransactionSections() -> [TransactionSection]
+    func isTranctationBookmarked(by id: Int) -> Bool
+    func bookmarkPressed(by id: Int)
+
+    func isAmountHide() -> Bool
+}
+
+class TransactionListView: UIView {
     
     // MARK: - Resumen Financiero
     let resumenStackView = UIStackView()
     let totalBalanceLabel = UILabel()
     let totalIngresosLabel = UILabel()
     let totalEgresosLabel = UILabel()
-
     
     // MARK: - Header
     let headerView = UIView()
@@ -22,8 +29,9 @@ class DashboardView: UIView {
     let titleLabel = UILabel()
 
     // MARK: - Lista de Transacciones (UITableView)
-    let tableView = UITableView(frame: .zero, style: .grouped)
-    
+    private let tableView = UITableView(frame: .zero, style: .grouped)
+    weak var delegate: TransactionListViewDelegate?
+
     // MARK: - Init
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -36,7 +44,11 @@ class DashboardView: UIView {
         setupHeader()
         setupTable()
     }
-    
+
+    func dataUpdated() {
+        tableView.reloadData()
+    }
+
     // MARK: - Setup Header
     private func setupHeader() {
         addSubview(headerView)
@@ -102,7 +114,10 @@ class DashboardView: UIView {
         tableView.showsVerticalScrollIndicator = false
         tableView.separatorStyle = .none
         tableView.backgroundColor = .black
-        
+
+        tableView.dataSource = self
+        tableView.delegate = self
+
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: headerView.bottomAnchor),
             tableView.bottomAnchor.constraint(equalTo: bottomAnchor),
@@ -111,4 +126,46 @@ class DashboardView: UIView {
         ])
     }
 }
+
+extension TransactionListView: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return delegate?.getTransactionSections().count ?? .zero
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return delegate?.getTransactionSections()[section].transactions.count ?? .zero
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "TransactionCell",
+                                                       for: indexPath) as? TransactionCell,
+              let transaction = delegate?.getTransactionSections()[indexPath.section].transactions[indexPath.row] else {
+            return UITableViewCell()
+        }
+        let isBookmarked = delegate?.isTranctationBookmarked(by: transaction.id) ?? false
+
+        cell.configure(
+            with: transaction,
+            showAmounts: delegate?.isAmountHide() ?? false,
+            isBookmarked: isBookmarked
+        ) { [weak self] id in
+            self?.delegate?.bookmarkPressed(by: id)
+
+            tableView.reloadRows(at: [indexPath], with: .automatic)
+        }
+
+        return cell
+    }
+
+
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return delegate?.getTransactionSections()[section].date
+    }
+}
+
+extension TransactionListView: UITableViewDelegate {
+    // Implementa si necesitas altura personalizada o interacción
+}
+
+
 
